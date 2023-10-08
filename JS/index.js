@@ -7,7 +7,7 @@ function getMovie(movies) {
         <div class="container">
         <div class="cont-1">
             <p class="year" style="color:#fff;">${movies.Year}</p>
-            <a href="https://www.imdb.com/title/${movies.imdbID}"><img src="./imdb.svg" height=20 width=30></img></a>
+            <a href="https://www.imdb.com/title/${movies.imdbID}"><img src="./assets/imdb.svg" height=20 width=30></img></a>
             <button class="favourite" onclick=setFavourite();>⭐</button>
         </div>
 
