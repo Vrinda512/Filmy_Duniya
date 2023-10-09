@@ -4,36 +4,35 @@ const wrappers = document.querySelector(".wrapper");
 function getMovie(movies) {
   let html = `
 
-        <div class="container">
-        <div class="cont-1">
-            <p class="year" style="color:#fff;">${movies.Year}</p>
-            <a href="https://www.imdb.com/title/${movies.imdbID}"><img src="./assets/imdb.svg" height=20 width=30></img></a>
-            <button class="favourite" onclick=setFavourite();>⭐</button>
-        </div>
-
-        <div class="cont-2">
-            <img src="${movies.Poster} " height="auto" width="200px" alt="movie">
-        </div>
-
-        <div class="cont-3">
-            <p style:"margin-bottom: 1%">${movies.Type}</p>
-            <h3>${movies.Title}</h3>
+  <div class = container>
+  <div class = card>
+  <div class = image>
+  <img href = "#" src ="${movies.Poster}" height="auto" width="200px" alt="movie">
+      </div>
+      <div class = content>
+      <h3>${movies.Title}</h3>
+        <h3>${movies.Year}</h3>
+        <a href="https://www.imdb.com/title/${movies.imdbID}"><img src="./assets/imdb.svg" height=20 width=30></img></a>
+        <p style:"margin-bottom: 1%">${movies.Type}</p>
+        <p></p>
+      </div>
         </div>
         </div>
     `;
   return html;
 }
 
-// Function to open the popup
 function openPopup() {
-  const popup = document.getElementById("popup");
-  popup.style.display = "block";
+  const newEle = document.createElement("a");
+  newEle.href = "#popup1";
+  newEle.id = "openPopup";
+  newEle.click();
 }
 
 // Function to close the popup
 function closePopup() {
-  const popup = document.getElementById("popup");
-  popup.style.display = "none";
+  const ele = document.getElementById("openPopup");
+  ele.remove();
 }
 
 async function fetchMovie(movie) {
